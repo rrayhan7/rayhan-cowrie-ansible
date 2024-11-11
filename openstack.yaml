@@ -1,0 +1,4 @@
+plugin: openstack.cloud.openstack
+
+expand_hostvars: true
+all_projects: true

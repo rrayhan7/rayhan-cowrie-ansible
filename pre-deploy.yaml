@@ -1,0 +1,15 @@
+- name: Setup SSH
+  hosts: web-*
+  become: true
+  tasks:
+  - name: Change SSH Port
+    lineinfile:
+      path: /etc/ssh/sshd_config
+      regexp: '#Port 22'
+      line: 'Port 8222'
+    ignore_errors: yes
+  - name: Restart SSH Port
+    service:
+      name: ssh
+      state: restarted
+    ignore_errors: yes

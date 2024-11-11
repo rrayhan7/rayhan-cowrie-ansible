@@ -1,0 +1,21 @@
+[honeypot]
+# Hostname for the honeypot. Displayed by the shell prompt of the virtual
+# environment
+hostname = {{ inventory_hostname }}
+
+[ssh]
+listen_endpoints = systemd:domain=INET6:index=0
+
+# Output Plugins
+
+# Send output to a Discord webhook [optional]
+[output_discord]
+enabled = true
+url = https://discord.com/api/webhooks/1303934171894513665/oj-BfvNc5Mf0E4kSN9LmMedAvc5Cj-kvLJZchMmVYucXJGvty7d9fC0-CabRNaTZH5tU
+
+# Text output
+# This writes audit log entries to a text file
+[output_textlog]
+enabled = false
+logfile = ${honeypot:log_path}/audit.log
+format = text
