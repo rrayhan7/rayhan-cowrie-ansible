@@ -93,6 +93,8 @@
          jump: REDIRECT
          to_ports: 2222        
 
+
+# ------------------WORK IN PROGRESS --------------------
 # - name: Install and Start Promtail
 #   hosts: web-*
 #   become: true
